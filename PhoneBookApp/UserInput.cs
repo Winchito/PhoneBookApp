@@ -84,7 +84,6 @@ namespace PhoneBookApp
             Console.Write("Select the contact ID, enter 0 to exit: ");
             int contactId = Int32.Parse(Console.ReadLine());
             bool idExists = ContactController.CheckIfIdExists(contactId);
-            Console.WriteLine(idExists);
             if (idExists)
             {
                 (string contactName, string contactPhoneNumber, string contactEmail) contactTuple = ConsoleUserInputs();

@@ -86,7 +86,7 @@ namespace PhoneBookApp.Controller
         {
             using(var db = new DatabaseManager())
             {
-                var data = db.Contacts.FirstOrDefault(c  => c.Id == contactId);
+                var data = db.Contacts.Find(contactId);
 
                 return data != null;
             }
