@@ -13,9 +13,9 @@ namespace PhoneBookApp.Data
     internal class DatabaseManager: DbContext
     {
 
-        public readonly string dbConnection = ConfigurationManager.AppSettings.Get("SQLConnection");
+        public readonly string dbConnection = ConfigurationManager.AppSettings.Get("SQLConnection") ?? throw new ArgumentNullException("missing 'SQLConnection' string in App.config");
 
-        DbSet<Contact> Contacts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
